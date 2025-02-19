@@ -4,7 +4,7 @@
 #' @param n Sample size
 #' @param p Probability
 #'
-#' @returns
+#' @returns Plots
 #' @export
 #'
 #' @examples
