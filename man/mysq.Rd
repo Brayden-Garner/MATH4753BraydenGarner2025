@@ -15,6 +15,3 @@ A quantitative vector with squared components
 \description{
 Mysquare function
 }
-\examples{
-mysq(1:10)
-}

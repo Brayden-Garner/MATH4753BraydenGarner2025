@@ -6,9 +6,6 @@
 #'
 #' @returns mu, sigma, and the area under the normal from -inf to a
 #' @export
-#'
-#' @examples
-#' myncurve(mu=10, sigma=5, a=6)
 myncurve <- function(mu = 0, sigma = 1, a) {
   curve(
     dnorm(x, mean = mu, sd = sigma),

@@ -2,4 +2,5 @@
 
 export(mybin)
 export(mycubic)
+export(myncurve)
 export(mysq)
