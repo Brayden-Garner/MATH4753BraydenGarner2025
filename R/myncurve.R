@@ -39,17 +39,17 @@ myncurve <- function(mu = 0, sigma = 1, a) {
 
   # Area (Probability) for label
   prob <- round( # to right bound - to left bound
-    1 - pbeta(a, mu, sigma),
+    pnorm(a, mu, sigma),
     4 # digits
   )
 
   # Area label
   text(
     (a - mu - 3 * sigma) / 2,
-    dbeta((a - mu - 3 * sigma) / 2, 3, 5) / 2,
+    pnorm((a - mu - 3 * sigma) / 2, 3, 5) / 2,
     paste("Area = ", prob, sep = "")
   )
 
-  area <- 1 - pbeta(a, mu, sigma)
+  area <- pnorm(a, mu, sigma)
   list(mu = mu, sigma = sigma, area = area)
 }
