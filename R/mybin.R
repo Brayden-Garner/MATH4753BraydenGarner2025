@@ -1,5 +1,9 @@
 #' My binomial distribution samples
 #'
+#' @importFrom grDevices rainbow
+#' @importFrom graphics abline barplot curve hist lines par polygon text
+#' @importFrom stats density dnorm dunif pbinom pnorm runif
+#'
 #' @param iter Number of plots
 #' @param n Sample size
 #' @param p Probability
@@ -17,8 +21,8 @@ mybin <- function(
   # Samples matrix (initially all NA)
   sam.mat <- matrix(
     NA,
-    nr = n,
-    nc = iter,
+    nrow = n,
+    ncol = iter,
     byrow = TRUE
   )
   # Trials successes vector

@@ -4,7 +4,7 @@
 \alias{myncurve}
 \title{Myncurve function}
 \usage{
-myncurve(mu = 0, sigma = 1, a)
+myncurve(mu = 0, sigma = 1, a, x)
 }
 \arguments{
 \item{mu}{A real number}
@@ -12,6 +12,8 @@ myncurve(mu = 0, sigma = 1, a)
 \item{sigma}{A real number}
 
 \item{a}{A real number}
+
+\item{x}{a variable}
 }
 \value{
 mu, sigma, and the area under the normal from -inf to a
