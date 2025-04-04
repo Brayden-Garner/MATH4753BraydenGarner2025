@@ -3,10 +3,15 @@
 #' @param mu A real number
 #' @param sigma A real number
 #' @param a A real number
+#' @param x a variable
+#'
+#' @importFrom grDevices rainbow
+#' @importFrom graphics abline barplot curve hist lines par polygon text
+#' @importFrom stats density dnorm dunif pbinom pnorm runif
 #'
 #' @returns mu, sigma, and the area under the normal from -inf to a
 #' @export
-myncurve <- function(mu = 0, sigma = 1, a) {
+myncurve <- function(mu = 0, sigma = 1, a, x) {
   curve(
     dnorm(x, mean = mu, sd = sigma),
     xlim = c(mu - 3 * sigma, mu + 3 * sigma)
