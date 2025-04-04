@@ -1,7 +1,7 @@
 Package: MATH4753BraydenGarner2025
 Type: Package
 Title: MATH 4753 lab functions
-Version: 0.1.2
+Version: 0.1.5
 Authors@R: c(
     person(
       "Brayden", "Garner",
