@@ -15,10 +15,7 @@
 #' @importFrom stats quantile
 #' @importFrom graphics hist abline segments text
 #'
-#' @return A list with the following components:
-#' - `ci`: A numeric vector containing the lower and upper bounds of the confidence interval.
-#' - `fun`: The statistic function that was used for the bootstrapping.
-#' - `x`: The original input data that was used for bootstrapping.
+#' @return A list with elements: ci (confidence interval), fun (statistic function used), and x (original input data).
 #'
 #' @examples
 #' set.seed(123)
