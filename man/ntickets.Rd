@@ -2,23 +2,40 @@
 % Please edit documentation in R/ntickets.R
 \name{ntickets}
 \alias{ntickets}
-\title{My n tickets function}
+\title{Calculate Optimal Ticket Sales for Overbooking}
 \usage{
 ntickets(N, gamma, p)
 }
 \arguments{
-\item{N}{Number of seats}
+\item{N}{An integer. The number of seats available.}
 
-\item{gamma}{Acceptable overbooking probability}
+\item{gamma}{A numeric value between 0 and 1. The acceptable overbooking probability (the probability
+that the number of ticket holders exceeding the available seats is within acceptable limits).}
 
-\item{p}{Probability that an individual shows up}
+\item{p}{A numeric value between 0 and 1. The probability that an individual ticket holder shows up.}
 }
 \value{
-list: nd (discrete), nc (continuous), N, gamma, and p
+A list containing:
+\item{nd}{The optimal number of tickets to sell using the discrete method.}
+\item{nc}{The optimal number of tickets to sell using the normal approximation method.}
+\item{N}{The number of seats available.}
+\item{gamma}{The overbooking probability.}
+\item{p}{The probability of a ticket holder showing up.}
+
+The function also produces two plots:
+- The first plot shows the objective function for the discrete calculation (blue curve) with a vertical
+  red line indicating the optimal number of tickets to sell.
+- The second plot shows the objective function for the normal approximation (black curve) with a vertical
+  blue line indicating the optimal number of tickets to sell using the normal approximation.
 }
 \description{
-My n tickets function
+This function calculates the optimal number of tickets to sell for an airline, taking into account
+both discrete and normal approximation methods, based on a given overbooking probability (\code{gamma})
+and the probability that a ticket holder shows up (\code{p}). It aims to minimize the probability of overbooking.
 }
 \examples{
 ntickets(400, 0.02, 0.95)
+# The function will calculate and display the optimal number of tickets
+# to sell for an airline with 400 seats, 2\% overbooking probability, and 95\% show-up rate.
+
 }

@@ -2,23 +2,35 @@
 % Please edit documentation in R/mybin.R
 \name{mybin}
 \alias{mybin}
-\title{My binomial distribution samples}
+\title{Simulate Binomial Distribution Samples}
 \usage{
 mybin(iter = 100, n = 10, p = 0.5)
 }
 \arguments{
-\item{iter}{Number of plots}
+\item{iter}{An integer. The number of simulations (iterations) to run.
+Default is 100.}
 
-\item{n}{Sample size}
+\item{n}{An integer. The sample size (number of trials) for each simulation.
+Default is 10.}
 
-\item{p}{Probability}
+\item{p}{A numeric value between 0 and 1. The probability of success for each trial.
+Default is 0.5.}
 }
 \value{
-Plots
+A vector of proportions of successes for each iteration.
+         A bar plot is also displayed showing the distribution of successes.
 }
 \description{
-My binomial distribution samples
+This function simulates multiple binomial trials and generates a bar plot
+showing the proportion of successes across all iterations. The function
+allows you to control the number of iterations, sample size, and the
+probability of success for each trial.
 }
 \examples{
+# Simulate binomial distribution with default parameters
 mybin()
+
+# Simulate binomial distribution with 200 iterations, 50 trials per iteration, and success probability of 0.7
+mybin(iter = 200, n = 50, p = 0.7)
+
 }

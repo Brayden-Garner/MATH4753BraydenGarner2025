@@ -2,26 +2,38 @@
 % Please edit documentation in R/myboot2.R
 \name{myboot2}
 \alias{myboot2}
-\title{My bootstrap 2 function}
+\title{Bootstrap Confidence Interval Visualization}
 \usage{
 myboot2(iter = 10000, x, fun = "mean", alpha = 0.05, cx = 1.5, ...)
 }
 \arguments{
-\item{iter}{A quantity}
+\item{iter}{Integer. Number of bootstrap resampling iterations. Default is 10,000.}
 
-\item{x}{A quantitative vector}
+\item{x}{Numeric vector. The original sample data to bootstrap from.}
 
-\item{fun}{A function name}
+\item{fun}{Function or function name as a string. The statistic to compute on each resample. Default is `"mean"`.}
 
-\item{alpha}{A significance value}
+\item{alpha}{Numeric. Significance level for the confidence interval (e.g., 0.05 for a 95% CI). Default is 0.05.}
 
-\item{cx}{CX}
+\item{cx}{Numeric. Text scaling factor for annotation labels on the plot. Default is 1.5.}
 
-\item{...}{All other arguments}
+\item{...}{Additional graphical parameters passed to `hist()`.}
 }
 \value{
-A graph of samples and a list of values
+A list with the following components:
+- `ci`: A numeric vector containing the lower and upper bounds of the confidence interval.
+- `fun`: The statistic function that was used for the bootstrapping.
+- `x`: The original input data that was used for bootstrapping.
 }
 \description{
-My bootstrap 2 function
+This function performs non-parametric bootstrapping to estimate the
+distribution of a statistic and plots a histogram
+of the bootstrapped values. It also overlays the point estimate and
+confidence interval.
+}
+\examples{
+set.seed(123)
+data <- rnorm(30, mean = 5, sd = 2)
+myboot2(iter = 1000, x = data, fun = "mean", alpha = 0.05)
+
 }

@@ -15,12 +15,10 @@
 #' @importFrom stats quantile
 #' @importFrom graphics hist abline segments text
 #'
-#' @return Invisibly returns a list with:
-#' \describe{
-#'   \item{ci}{Numeric vector. Lower and upper bounds of the confidence interval.}
-#'   \item{fun}{The statistic function used.}
-#'   \item{x}{The original input data.}
-#' }
+#' @return A list with the following components:
+#' - `ci`: A numeric vector containing the lower and upper bounds of the confidence interval.
+#' - `fun`: The statistic function that was used for the bootstrapping.
+#' - `x`: The original input data that was used for bootstrapping.
 #'
 #' @examples
 #' set.seed(123)

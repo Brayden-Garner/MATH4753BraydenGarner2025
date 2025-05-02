@@ -7,19 +7,28 @@
 mycltu(n, iter, a = 0, b = 10, x)
 }
 \arguments{
-\item{n}{# an integer sample size}
+\item{n}{An integer specifying the sample size for each iteration.
+Represents the number of random samples drawn from the uniform distribution in each iteration.}
 
-\item{iter}{# an integer number of samples}
+\item{iter}{An integer specifying the number of iterations (samples).
+This determines how many sample means will be computed.}
 
-\item{a}{# lower bound for uniform}
+\item{a}{A numeric value specifying the lower bound of the uniform distribution. Default is 0.}
 
-\item{b}{# upper bound for uniform}
+\item{b}{A numeric value specifying the upper bound of the uniform distribution. Default is 10.}
 
-\item{x}{# a variable}
+\item{x}{A numeric vector representing the range of values over which to plot the theoretical normal and uniform distributions.}
 }
 \value{
-# none
+This function does not return any value. It generates a histogram of the sample means with an overlaid
+theoretical normal distribution curve and the density curve of the sample means.
 }
 \description{
-My Central Limit Theorem Uniform Function
+This function simulates the Central Limit Theorem (CLT) by taking repeated samples from a uniform distribution
+and computing their means. It then visualizes the distribution of these sample means, comparing it with both
+a density plot of the sample means and a theoretical normal distribution.
+}
+\examples{
+# Simulate the CLT with sample size 30, 1000 iterations, and uniform distribution between 0 and 10
+mycltu(n = 30, iter = 1000, a = 0, b = 10, x = seq(-5, 15, by = 0.1))
 }
