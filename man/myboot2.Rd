@@ -20,10 +20,7 @@ myboot2(iter = 10000, x, fun = "mean", alpha = 0.05, cx = 1.5, ...)
 \item{...}{Additional graphical parameters passed to `hist()`.}
 }
 \value{
-A list with the following components:
-- `ci`: A numeric vector containing the lower and upper bounds of the confidence interval.
-- `fun`: The statistic function that was used for the bootstrapping.
-- `x`: The original input data that was used for bootstrapping.
+A list with elements: ci (confidence interval), fun (statistic function used), and x (original input data).
 }
 \description{
 This function performs non-parametric bootstrapping to estimate the
