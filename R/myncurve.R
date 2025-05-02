@@ -1,15 +1,34 @@
-#' Myncurve function
+#' Myncurve: Plot Normal Distribution and Compute Area Under the Curve
 #'
-#' @param mu A real number
-#' @param sigma A real number
-#' @param a A real number
-#' @param x a variable
+#' This function plots the normal distribution curve for a given mean (`mu`) and standard deviation (`sigma`),
+#' and shades the area under the curve from negative infinity up to a specified value `a`. It also returns
+#' the mean, standard deviation, and the computed probability (area) from negative infinity to `a`.
+#'
+#' @param mu A numeric value representing the mean of the normal distribution (default is 0).
+#' @param sigma A numeric value representing the standard deviation of the normal distribution (default is 1).
+#' @param a A numeric value indicating the point up to which the area under the normal curve will be computed and shaded.
+#' @param x A numeric vector for the x-values over which the normal distribution curve will be plotted.
 #'
 #' @importFrom grDevices rainbow
 #' @importFrom graphics abline barplot curve hist lines par polygon text
 #' @importFrom stats density dnorm dunif pbinom pnorm runif
 #'
-#' @returns mu, sigma, and the area under the normal from -inf to a
+#' @returns A list containing:
+#' \item{mu}{The mean of the normal distribution (input value).}
+#' \item{sigma}{The standard deviation of the normal distribution (input value).}
+#' \item{area}{The area (probability) under the normal curve from -∞ to the specified point `a` (computed using `pnorm`).}
+#'
+#' @details This function allows users to visualize the normal distribution and compute the cumulative probability
+#' for any given value of `a`. The area under the curve represents the cumulative probability of obtaining a value
+#' less than or equal to `a` for a normal distribution with the specified mean and standard deviation.
+#'
+#' @examples
+#' # Plot normal distribution with mu = 0, sigma = 1, and compute the area up to a = 1.5
+#' mycurve(mu = 0, sigma = 1, a = 1.5, x = seq(-3, 3, by = 0.1))
+#'
+#' # Plot normal distribution with mu = 2, sigma = 1, and compute the area up to a = 2.5
+#' mycurve(mu = 2, sigma = 1, a = 2.5, x = seq(-1, 5, by = 0.1))
+#'
 #' @export
 myncurve <- function(mu = 0, sigma = 1, a, x) {
   curve(

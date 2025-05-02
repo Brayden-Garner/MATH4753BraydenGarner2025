@@ -1,0 +1,59 @@
+---
+title: "Using the MATH4753BraydenGarner2025 Package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using the MATH4753BraydenGarner2025 Package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+This vignette demonstrates how to use the `MATH4753BraydenGarner2025` package, which contains a variety of functions created by Brayden Garner for MATH4753 for statistical analysis.
+
+```{r}
+library(MATH4753BraydenGarner2025)
+```
+
+## Example 1: Squaring Numbers
+
+```{r}
+# mysq(x) returns x squared
+mysq(5) # 25
+```
+
+## Example 2: Cubing Numbers
+
+```{r}
+# mycubic(x) returns x cubed
+mycubic(2) # 8
+```
+
+## Example 3: Binomial Simulation
+
+The `mybin()` function simulates a binomial distribution and generates a bar plot of the results. Here, we simulate 10 trials with a success probability of 0.7.
+
+```{r}
+mybin(n = 10, p = 0.7)  # Simulates binomial distribution and plots the result
+```
+
+## Example 4: Bootstrap Confidence Interval
+
+This example demonstrates the `myboot2()` function, which performs a bootstrap resampling procedure and plots the histogram of the bootstrap sample statistics. A confidence interval is also displayed.
+
+```{r}
+# Random sample data for myboot2
+set.seed(123)
+data <- rnorm(30, mean = 5, sd = 2)
+
+# Bootstrap with 1000 iterations and estimating the mean with a 95% confidence interval
+myboot2(iter = 1000, x = data, fun = "mean", alpha = 0.05)
+```
+
+# Conclusion
+
+This vignette covered how to use the functions `mysq()`, `mycubic()`, `mybin()`, and `myboot2()` from the `MATH4753BraydenGarner2025` package. These functions provide useful tools for performing basic mathematical operations, probability simulations, and statistical resampling with bootstrapping.

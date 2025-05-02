@@ -1,16 +1,32 @@
-#' My bootstrap 2 function
+#' Bootstrap Confidence Interval Visualization
 #'
-#' @param iter  A quantity
-#' @param x     A quantitative vector
-#' @param fun   A function name
-#' @param alpha A significance value
-#' @param cx    CX
-#' @param ...   All other arguments
+#' This function performs non-parametric bootstrapping to estimate the
+#' distribution of a statistic and plots a histogram
+#' of the bootstrapped values. It also overlays the point estimate and
+#' confidence interval.
+#'
+#' @param iter Integer. Number of bootstrap resampling iterations. Default is 10,000.
+#' @param x Numeric vector. The original sample data to bootstrap from.
+#' @param fun Function or function name as a string. The statistic to compute on each resample. Default is `"mean"`.
+#' @param alpha Numeric. Significance level for the confidence interval (e.g., 0.05 for a 95% CI). Default is 0.05.
+#' @param cx Numeric. Text scaling factor for annotation labels on the plot. Default is 1.5.
+#' @param ... Additional graphical parameters passed to `hist()`.
 #'
 #' @importFrom stats quantile
-#' @importFrom graphics segments
+#' @importFrom graphics hist abline segments text
 #'
-#' @returns     A graph of samples and a list of values
+#' @return Invisibly returns a list with:
+#' \describe{
+#'   \item{ci}{Numeric vector. Lower and upper bounds of the confidence interval.}
+#'   \item{fun}{The statistic function used.}
+#'   \item{x}{The original input data.}
+#' }
+#'
+#' @examples
+#' set.seed(123)
+#' data <- rnorm(30, mean = 5, sd = 2)
+#' myboot2(iter = 1000, x = data, fun = "mean", alpha = 0.05)
+#'
 #' @export
 myboot2 <- function(iter = 10000,
                     x,

@@ -1,18 +1,37 @@
-#' My n tickets function
+#' Calculate Optimal Ticket Sales for Overbooking
 #'
-#' @param N Number of seats
-#' @param gamma Acceptable overbooking probability
-#' @param p Probability that an individual shows up
+#' This function calculates the optimal number of tickets to sell for an airline, taking into account
+#' both discrete and normal approximation methods, based on a given overbooking probability (\code{gamma})
+#' and the probability that a ticket holder shows up (\code{p}). It aims to minimize the probability of overbooking.
+#'
+#' @param N An integer. The number of seats available.
+#' @param gamma A numeric value between 0 and 1. The acceptable overbooking probability (the probability
+#'        that the number of ticket holders exceeding the available seats is within acceptable limits).
+#' @param p A numeric value between 0 and 1. The probability that an individual ticket holder shows up.
 #'
 #' @importFrom grDevices rainbow
 #' @importFrom graphics abline barplot curve hist lines par polygon text
 #' @importFrom stats density dnorm dunif pbinom pnorm runif
 #'
-#' @returns list: nd (discrete), nc (continuous), N, gamma, and p
-#' @export
+#' @returns A list containing:
+#' \item{nd}{The optimal number of tickets to sell using the discrete method.}
+#' \item{nc}{The optimal number of tickets to sell using the normal approximation method.}
+#' \item{N}{The number of seats available.}
+#' \item{gamma}{The overbooking probability.}
+#' \item{p}{The probability of a ticket holder showing up.}
+#'
+#' The function also produces two plots:
+#' - The first plot shows the objective function for the discrete calculation (blue curve) with a vertical
+#'   red line indicating the optimal number of tickets to sell.
+#' - The second plot shows the objective function for the normal approximation (black curve) with a vertical
+#'   blue line indicating the optimal number of tickets to sell using the normal approximation.
 #'
 #' @examples
 #' ntickets(400, 0.02, 0.95)
+#' # The function will calculate and display the optimal number of tickets
+#' # to sell for an airline with 400 seats, 2% overbooking probability, and 95% show-up rate.
+#'
+#' @export
 ntickets <- function(N, gamma, p) {
 
   # Discrete Calculation

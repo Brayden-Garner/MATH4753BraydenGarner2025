@@ -6,6 +6,7 @@
 #' @param ... all other arguments
 #'
 #' @returns a list of: i, the param at i, y at i, and the slope
+#' @export
 mymaxlik <- function(lfun, x, param, ...) {
   # how many param values are there?
   np = length(param)
