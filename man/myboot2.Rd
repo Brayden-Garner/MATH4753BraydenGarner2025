@@ -13,7 +13,7 @@ myboot2(iter = 10000, x, fun = "mean", alpha = 0.05, cx = 1.5, ...)
 
 \item{fun}{Function or function name as a string. The statistic to compute on each resample. Default is `"mean"`.}
 
-\item{alpha}{Numeric. Significance level for the confidence interval (e.g., 0.05 for a 95% CI). Default is 0.05.}
+\item{alpha}{Numeric. Significance level for the confidence interval (e.g., 0.05 for a 95 CI). Default is 0.05.}
 
 \item{cx}{Numeric. Text scaling factor for annotation labels on the plot. Default is 1.5.}
 
@@ -24,13 +24,11 @@ A list with elements: ci (confidence interval), fun (statistic function used), a
 }
 \description{
 This function performs non-parametric bootstrapping to estimate the
-distribution of a statistic and plots a histogram
-of the bootstrapped values. It also overlays the point estimate and
-confidence interval.
+distribution of a statistic and plots a histogram of the bootstrapped values.
+It also overlays the point estimate and confidence interval.
 }
 \examples{
 set.seed(123)
 data <- rnorm(30, mean = 5, sd = 2)
 myboot2(iter = 1000, x = data, fun = "mean", alpha = 0.05)
-
 }

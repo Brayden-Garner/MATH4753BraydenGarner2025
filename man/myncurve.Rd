@@ -33,9 +33,9 @@ less than or equal to `a` for a normal distribution with the specified mean and 
 }
 \examples{
 # Plot normal distribution with mu = 0, sigma = 1, and compute the area up to a = 1.5
-mycurve(mu = 0, sigma = 1, a = 1.5, x = seq(-3, 3, by = 0.1))
+myncurve(mu = 0, sigma = 1, a = 1.5, x = seq(-3, 3, by = 0.1))
 
 # Plot normal distribution with mu = 2, sigma = 1, and compute the area up to a = 2.5
-mycurve(mu = 2, sigma = 1, a = 2.5, x = seq(-1, 5, by = 0.1))
+myncurve(mu = 2, sigma = 1, a = 2.5, x = seq(-1, 5, by = 0.1))
 
 }

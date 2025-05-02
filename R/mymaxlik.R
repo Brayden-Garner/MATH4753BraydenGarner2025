@@ -4,7 +4,8 @@
 #' @param x a quantitative variable
 #' @param param a population parameter
 #' @param ... all other arguments
-#'
+#' @importFrom graphics axis points segments
+#' @importFrom stats quantile
 #' @returns a list of: i, the param at i, y at i, and the slope
 #' @export
 mymaxlik <- function(lfun, x, param, ...) {
